@@ -1,5 +1,6 @@
 package com.educandoweb.courseSpring.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 
