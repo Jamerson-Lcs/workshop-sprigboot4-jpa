@@ -1,5 +1,6 @@
 package com.educandoweb.courseSpring.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -19,6 +20,7 @@ public class Product implements Serializable {
     private Double price;
     private String imgUrl;
 
+    @ManyToMany(mappedBy = "products")
     private Set <Category> categories = new HashSet<>();
 
     public Product(){}

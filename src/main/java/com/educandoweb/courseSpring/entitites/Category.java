@@ -1,5 +1,6 @@
 package com.educandoweb.courseSpring.entitites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -16,6 +17,9 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "category_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<Product> products = new HashSet<>();
 
     public Category(){}
